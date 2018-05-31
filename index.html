@@ -2,12 +2,10 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .container {
   position: relative;
-  width: 100%;
-  max-width: 400px;
+  width: 50%;
 }
 
 .image {
@@ -16,50 +14,56 @@
   height: auto;
 }
 
+.inner-image {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+cursor: pointer;
+
+}
+
 .overlay {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .3s ease;
-  background-color: yellow;
+  background-color: gold;
+  overflow: hidden;
+  width: 0;
+  height: 70%;
+  transition: .5s ease;
+opacity: 1
 }
 
 .container:hover .overlay {
-  opacity: 1;
+width: 100%;
+
 }
 
-.icon {
+.text {
   color: white;
-  font-size: 100px;
+  font-size: 15px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-align: center;
+  white-space: wrap;
 }
 
-.fa-user:hover {
-  color: #eee;
-}
+
 </style>
 </head>
 <body>
 
-<h2>Fade in Overlay Icon</h2>
-<p>Hover over the image to see the effect.</p>
+<h2>Good Impressions AD Example</h2>
+<p>Hover to see effect</p>
 
 <div class="container">
   <img src="avatar.jpg" alt="Avatar" class="image">
+<img src="halo.png" style="width: 10%; height: 10%" alt="Halo" class="inner-image"> 	
   <div class="overlay">
-    <a href="#" class="icon" title="User Profile">
-      <i class="fa fa-user"></i>
-    </a>
+    <div class="text">sample charity text and logo - advertiser information and links </div>
   </div>
 </div>
 
