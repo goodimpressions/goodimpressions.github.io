@@ -1,71 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.container {
-  position: relative;
-  width: 50%;
-}
-
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.inner-image {
-  position: absolute;
-  top: 5px;
-  left: 0px;
-cursor: pointer;
-
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: gold;
-  overflow: hidden;
-  width: 0;
-  height: 70%;
-  transition: .5s ease;
-opacity: 1
-}
-
-.container:hover .overlay {
-width: 100%;
-
-}
-
-.text {
-  color: white;
-  font-size: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  white-space: wrap;
-}
-
-
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
+  <h2>Good Impressions AD Example</h2>
+  <p>Hover to see effect</p>
 
-<h2>Good Impressions AD Example</h2>
-<p>Hover to see effect</p>
+  <div class="container" id="container">
+    <img src="avatar.jpg" alt="Avatar" class="image">
+    <img src="halo.png" style="width: 10%; height: 10%" alt="Halo" class="inner-image" id="halo"> 	
 
-<div class="container">
-  <img src="avatar.jpg" alt="Avatar" class="image">
-<img src="halo.png" style="width: 10%; height: 10%" alt="Halo" class="inner-image"> 	
-  <div class="overlay">
-    <div class="text">sample charity text and logo - advertiser information and links </div>
+    <div class="overlay" id="overlay">
+      <div class="text">sample charity text and logo - advertiser information and links </div>
+    </div>
   </div>
-</div>
 
+  <script>
+      const container = document.getElementById('container');
+      const overlay = document.getElementById("overlay");
+      const haloImg = document.getElementById('halo');
+      haloImg.onmouseover = function () {
+        overlay.classList.add('fullWidth');
+      }
+      container.onmouseleave = function () {
+        overlay.classList.remove('fullWidth');
+      }
+  </script>
 </body>
 </html>
